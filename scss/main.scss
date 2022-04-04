@@ -1,3 +1,12 @@
+@use 'other';
+
+$contrastColor: slategrey;
+$appWidth: 200px;
+
+@function calcDivMargin($width) {
+  @return $width / 4;
+}
+
 html, body {
   height: 100%;
   width: 100%;
@@ -8,29 +17,29 @@ html, body {
 #app {
   width: 50%;
   margin: 0 auto;
-  text-align: center; 
-}
+  text-align: center;
 
-#app div {
-  margin-top: 50px; 
-}
-  
-#app div h1 {
-  color: slategrey; 
-}
+  div {
+    margin-top: calcDivMargin($appWidth);
 
-#app div ul {
-  width: 200px;
-  margin: 0 auto;
-  text-align: left; 
-}
+    h1 {
+      color: $contrastColor;
+    }
 
-#app div ul li {
-  margin-top: 10px;
-  word-break: break-all;
-  font-size: 1.1em; 
-}
+    ul {
+      width: $appWidth;
+      margin: 0 auto;
+      text-align: left;
 
-#app div h2 i {
-  color: slategrey; 
+      li {
+        margin-top: 10px;
+        word-break: break-all;
+        font-size: 1.1em; 
+      }
+    }
+
+    h2 i {
+      color: $contrastColor; 
+    }
+  }
 }
